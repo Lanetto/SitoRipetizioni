@@ -7,13 +7,43 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 
+<style>
+        /* 1. Di base (mobile-first), NASCONDIAMO le immagini */
+        .side-image {
+            display: none;
+        }
+
+        /* * 2. Questa "Media Query" si attiva SOLO se lo schermo
+         * è più largo di 1100px (cioè su PC) 
+         */
+        @media (min-width: 1100px) {
+            
+            /* Mostriamo di nuovo le immagini */
+            .side-image {
+                display: block;
+                position: fixed;
+                top: 20px;
+                max-width: 250px;
+                height: auto;
+                z-index: -1; /* Le lasciamo dietro al testo */
+            }
+
+            /* Posizioniamo le immagini specifiche */
+            #img-left {
+                left: 20px;
+            }
+            #img-right {
+                right: 20px;
+            }
+        }
+    </style>
+
 <body>
     
 
     <h1 style="text-align: center; width:auto;" >🆘 Hai bisogno di aiuto in Matematica? 🆘<br> Offro Ripetizioni! </h1>
-    <img src="sas.jpg" alt="img_sx" style="position: fixed; top: 10px; left: 10px; max-width: 270px; height: auto; z-index: -1;">
-    <img src="3665587.jpg" alt="img_dx" style="position: fixed; top: 10px; right: 10px; max-width: 270px; height: auto; z-index: -1;">
-    <p>
+    <img src="sas.jpg" alt="img_sx" class="side-image" id="img-left">
+    <img src="sas.jpg" alt="img_dx" class="side-image" id="img-right">
         Ciao! Sono uno studente al secondo anno di Università (Informatica) e offro ripetizioni di Matematica. <br>
         Se hai difficoltà con espressioni, equazioni, geometria o altro, posso aiutarti a colmare le lacune e a prepararti al meglio per test e verifiche. <br>
     </p>
